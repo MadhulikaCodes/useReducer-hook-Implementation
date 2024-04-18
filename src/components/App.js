@@ -101,9 +101,9 @@ export default function App() {
   );
 
   useEffect(function () {
-    fetch("http://localhost:9000/questions")
+    fetch("https://json-server-data-9pwh.onrender.com/")
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", payload: data }))
+      .then((data) => dispatch({ type: "dataReceived", payload: data?.questions }))
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
 
